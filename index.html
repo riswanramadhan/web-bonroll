@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bonroll — Roti Abon Roll Premium</title>
+<meta name="description" content="Bonroll - Roti abon roll premium dengan abon ayam olahan resep rahasia. Gurih, sedikit manis, empuk, tanpa pengawet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brand: #FC9F42;
+  --brand-dark: #E8881A;
+  --brand-light: #FFF4E6;
+  --cream: #FFFBF5;
+  --dark: #1A1208;
+  --brown: #3D2B1F;
+  --muted: #9E8A7A;
+  --border: #F0E6D6;
+  --surface: #FFFFFF;
+  --overlay: rgba(26,18,8,0.55);
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 40px;
+  --shadow-soft: 0 4px 24px rgba(252,159,66,0.12);
+  --shadow-card: 0 8px 40px rgba(26,18,8,0.08);
+  --shadow-brand: 0 8px 32px rgba(252,159,66,0.35);
+  --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--brown); font-family: var(--font-body); overflow-x: hidden; }
+img { width: 100%; display: block; object-fit: cover; }
+a { text-decoration: none; color: inherit; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 12px;
+}
+.section-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.section-sub {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-header .section-sub { margin-left: auto; margin-right: auto; }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+section { padding: 80px 0; }
+
+.btn-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: var(--radius-xl);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-brand:hover {
+  background: var(--brand-dark);
+  box-shadow: var(--shadow-brand);
+  transform: scale(1.02);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: var(--radius-xl);
+  border: 2px solid rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-ghost:hover {
+  background: #fff;
+  color: var(--dark);
+  border-color: #fff;
+}
+
+/* NAV */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  padding: 16px 0;
+  transition: var(--transition);
+}
+.main-nav.scrolled {
+  background: rgba(255,251,245,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 24px;
+  color: #fff;
+  transition: var(--transition);
+  letter-spacing: -0.02em;
+}
+.main-nav.scrolled .nav-logo { color: var(--dark); }
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background-image: url('images/logo-bonroll.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  flex-shrink: 0;
+  /* Fallback styling if logo image is not available */
+  background-color: #fff;
+  border-radius: 8px;
+}
+/* Remove after pseudo-element as it's no longer needed for PNG logo */
+.logo-icon::after {
+  display: none;
+}
+
+/* Responsive logo sizing */
+@media (max-width: 768px) {
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+  transition: var(--transition);
+}
+.main-nav.scrolled .nav-links a { color: var(--brown); }
+.nav-links a:hover { color: var(--brand); }
+.nav-cta { display: none; }
+.nav-cta .btn-brand { padding: 10px 24px; font-size: 14px; }
+
+/* HAMBURGER — Modern animated */
+.hamburger {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.hamburger::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--brand);
+  border-radius: 14px;
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  z-index: 0;
+}
+.hamburger.active::before { transform: scale(1); }
+.main-nav.scrolled .hamburger {
+  background: rgba(26,18,8,0.04);
+  border-color: var(--border);
+}
+.hamburger:hover { background: rgba(255,255,255,0.2); }
+.main-nav.scrolled .hamburger:hover { background: rgba(26,18,8,0.08); }
+.hamburger:active { transform: scale(0.88); }
+.hamburger-lines {
+  width: 20px;
+  height: 14px;
+  position: relative;
+  z-index: 1;
+}
+.hamburger-lines span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center;
+}
+.main-nav.scrolled .hamburger-lines span { background: var(--dark); }
+.hamburger-lines span:nth-child(1) { top: 0; width: 100%; }
+.hamburger-lines span:nth-child(2) { top: 6px; width: 55%; }
+.hamburger-lines span:nth-child(3) { top: 12px; width: 75%; }
+.hamburger.active .hamburger-lines span { background: #fff; }
+.hamburger.active .hamburger-lines span:nth-child(1) {
+  width: 100%; transform: translateY(6px) rotate(45deg);
+}
+.hamburger.active .hamburger-lines span:nth-child(2) {
+  opacity: 0; transform: translateX(-10px); width: 0;
+}
+.hamburger.active .hamburger-lines span:nth-child(3) {
+  width: 100%; transform: translateY(-6px) rotate(-45deg);
+}
+
+/* NAV OVERLAY */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+}
+.nav-overlay-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.nav-overlay.open .nav-overlay-bg {
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-overlay-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  max-width: 360px;
+  height: 100%;
+  background: var(--cream);
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.nav-overlay.open .nav-overlay-panel {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+.nav-overlay-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 80px;
+}
+.nav-overlay-links a {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--dark);
+  transition: var(--transition);
+  letter-spacing: -0.01em;
+}
+.nav-overlay-links a:hover { color: var(--brand); }
+.nav-overlay-cta {
+  margin-top: auto;
+  padding-top: 32px;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 100px 20px 80px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: radial-gradient(ellipse at center bottom, rgba(252,159,66,0.15) 0%, transparent 70%);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(252,159,66,0.5);
+  background: rgba(252,159,66,0.15);
+  color: var(--brand);
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s forwards;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(36px, 7vw, 80px);
+  color: #fff;
+  line-height: 1.08;
+  margin: 24px 0;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.35s forwards;
+  letter-spacing: -0.03em;
+}
+.hero h1 em {
+  color: var(--brand);
+  font-style: italic;
+}
+.hero-sub {
+  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 32px;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
+}
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.65s forwards;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: #fff;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.8s forwards;
+}
+.scroll-indicator i { animation: bounce 2s ease-in-out infinite; display: block; }
+.hero-chips {
+  position: absolute;
+  bottom: 100px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+  display: none;
+  justify-content: space-between;
+}
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.hero-chip.float-anim {
+  animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.9s forwards, floatSlow 4s ease-in-out 1.7s infinite;
+}
+.hero-chip.float-anim-delay {
+  animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.05s forwards, floatSlow 4s ease-in-out 2s infinite;
+}
+
+/* TRUST BAR */
+.trust-bar {
+  background: var(--brand);
+  padding: 24px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.trust-bar::-webkit-scrollbar { display: none; }
+.trust-bar-inner {
+  display: flex;
+  gap: 0;
+  min-width: max-content;
+  padding: 0 20px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+.trust-item:last-child { border-right: none; }
+.trust-item i { color: #fff; width: 28px; height: 28px; flex-shrink: 0; }
+.trust-item svg { color: #fff; stroke: #fff; width: 28px; height: 28px; flex-shrink: 0; }
+.trust-text-group { text-align: left; }
+.trust-value { font-weight: 700; font-size: 16px; color: #fff; }
+.trust-label { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+/* PRODUCTS */
+.products { background: var(--cream); }
+
+/* Merged Variant Card */
+.variant-card-merged {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: var(--transition);
+  margin-bottom: 32px;
+}
+.variant-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border);
+}
+.variant-tab {
+  flex: 1;
+  padding: 16px 20px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.variant-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  border-radius: 3px 3px 0 0;
+  transition: var(--transition);
+}
+.variant-tab.active {
+  color: var(--dark);
+}
+.variant-tab.active::after {
+  background: var(--brand);
+}
+.variant-tab .tab-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #fff;
+}
+.variant-panel {
+  display: none;
+  animation: fadeIn 0.35s ease;
+}
+.variant-panel.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.variant-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.variant-img-wrap img { width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+.variant-card-merged:hover .variant-img-wrap img { transform: scale(1.03); }
+.variant-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  z-index: 1;
+}
+.variant-body { padding: 24px; }
+.variant-body h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--dark);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.variant-body p { font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+.flavor-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.flavor-badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--brand-light);
+  color: var(--brand);
+}
+
+/* Packaging Image Cards */
+.packaging-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+.pkg-img-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--brand-light);
+}
+.pkg-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.pkg-img-card:hover img {
+  transform: scale(1.05);
+}
+.pkg-img-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  background: linear-gradient(transparent, rgba(26,18,8,0.7));
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.packaging-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.packaging-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+  display: flex;
+  gap: 20px;
+  transition: var(--transition);
+  align-items: flex-start;
+}
+.packaging-card:hover { transform: translateY(-4px); box-shadow: 0 12px 48px rgba(26,18,8,0.12); }
+.pkg-icon-wrap {
+  width: 52px;
+  height: 52px;
+  background: var(--brand-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--brand);
+}
+.pkg-content { flex: 1; }
+.pkg-content h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.pkg-price { font-weight: 700; color: var(--brand); font-size: 20px; margin-bottom: 8px; }
+.pkg-content > p { font-size: 14px; color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
+.pkg-perks { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.pkg-perks li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--brown);
+}
+.pkg-perks li i { color: var(--brand); width: 16px; height: 16px; flex-shrink: 0; }
+
+/* KENAPA BONROLL */
+.why-section { background: var(--brand-light); }
+.why-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.why-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  border-top: 3px solid transparent;
+}
+.why-card:hover { transform: translateY(-6px); border-top-color: var(--brand); }
+.why-card-icon { color: var(--brand); margin-bottom: 16px; }
+.why-card-icon i { width: 40px; height: 40px; }
+.why-card h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.why-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.why-image-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: visible;
+}
+.why-image-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 16px -16px -16px 16px;
+  background: var(--brand);
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+.why-image-wrap img {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  aspect-ratio: 4/5;
+}
+
+/* TIPS */
+.tips-section {
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+.tips-bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.1;
+}
+.tips-bg-img img { width: 100%; height: 100%; object-fit: cover; }
+.tips-section .container { position: relative; z-index: 1; }
+.tips-section .eyebrow { color: var(--brand); }
+.tips-section .section-h2 { color: #fff; white-space: pre-line; }
+.tips-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+.tips-group h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.storage-card, .serving-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.storage-card .tip-icon, .serving-card .tip-icon {
+  color: var(--brand);
+  flex-shrink: 0;
+}
+.tip-label { font-size: 13px; color: var(--muted); }
+.tip-value { font-size: 18px; font-weight: 700; color: #fff; margin: 4px 0; }
+.tip-note { font-size: 13px; color: var(--muted); }
+.serving-card { border-left: 3px solid var(--brand); }
+.serving-method { font-weight: 600; color: #fff; font-size: 15px; }
+.serving-duration { font-size: 22px; font-weight: 700; color: var(--brand); margin: 4px 0; }
+.serving-desc { font-size: 13px; color: var(--muted); }
+
+/* CARA PESAN */
+.order-section { background: var(--cream); }
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  position: relative;
+  margin-bottom: 40px;
+}
+.step-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  text-align: center;
+}
+.step-card:hover { transform: translateY(-4px); }
+.step-num {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 80px;
+  color: var(--dark);
+  opacity: 0.06;
+  line-height: 1;
+}
+.step-icon-wrap {
+  width: 56px;
+  height: 56px;
+  background: var(--brand-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--brand);
+}
+.step-card h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.step-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.order-cta { text-align: center; }
+
+/* LOKASI */
+.location-section { padding: 0; }
+.location-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.location-left {
+  background: var(--brand);
+  padding: 60px 20px;
+}
+.location-left .eyebrow { color: #fff; }
+.location-left .section-h2 { color: #fff; white-space: pre-line; }
+.location-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.location-card i { color: #fff; flex-shrink: 0; }
+.loc-name { font-weight: 700; color: #fff; font-size: 16px; }
+.loc-address { font-size: 13px; color: rgba(255,255,255,0.75); margin: 4px 0; }
+.loc-schedule {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+.loc-schedule i { width: 14px; height: 14px; }
+.location-right {
+  background: var(--surface);
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.location-right iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: var(--radius-lg);
+}
+
+/* CHANNELS */
+.channels-section { background: var(--brand-light); }
+.channels-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.channel-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.channel-card:hover { transform: translateY(-6px); box-shadow: 0 12px 48px rgba(26,18,8,0.14); }
+.channel-bar { height: 4px; }
+.channel-body { padding: 24px; }
+.channel-logo-wrap {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.channel-logo-wrap img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+.channel-logo-wrap svg {
+  width: 36px;
+  height: 36px;
+}
+.channel-body h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--dark);
+  letter-spacing: -0.01em;
+}
+.channel-handle { font-size: 14px; color: var(--brand); font-weight: 600; margin: 4px 0 8px; }
+.channel-body > p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+.channel-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--radius-xl);
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  transition: var(--transition);
+}
+.channel-cta:hover { opacity: 0.9; transform: scale(1.02); }
+
+/* TESTIMONIALS */
+.testimonials-section { background: var(--surface); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+.testimonial-card:hover { border-color: var(--brand); transform: translateY(-4px); }
+.testi-stars { display: flex; gap: 4px; margin-bottom: 16px; color: #F59E0B; }
+.testi-stars i { width: 18px; height: 18px; }
+.testi-text {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--dark);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testi-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--brand-light);
+  border: 1px solid rgba(252,159,66,0.3);
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.testi-avatar svg { width: 20px; height: 20px; stroke-width: 2.2; }
+.testi-name { font-weight: 600; font-size: 14px; color: var(--dark); }
+.testi-role { font-size: 12px; color: var(--muted); }
+
+/* JOIN KEMITRAAN */
+.partner-section {
+  background: linear-gradient(180deg, #FFF8EE 0%, #FFF1DD 100%);
+}
+.partner-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 28px;
+  overflow: hidden;
+}
+.partner-card::before {
+  content: '';
+  position: absolute;
+  top: -90px;
+  right: -70px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(252,159,66,0.28) 0%, rgba(252,159,66,0) 70%);
+  pointer-events: none;
+}
+.partner-content { position: relative; z-index: 1; }
+.partner-content .section-h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  margin-bottom: 12px;
+}
+.partner-content .section-sub {
+  margin-bottom: 24px;
+  max-width: 640px;
+}
+.partner-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.partner-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--brand-light);
+  border-radius: var(--radius-md);
+  padding: 14px;
+}
+.partner-item i {
+  width: 20px;
+  height: 20px;
+  color: var(--brand);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.partner-item strong {
+  display: block;
+  font-size: 14px;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+.partner-item span {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.partner-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.partner-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--brown);
+  font-size: 14px;
+  font-weight: 600;
+}
+.partner-link:hover { color: var(--brand-dark); }
+
+/* INSTAGRAM */
+.insta-section { background: var(--cream); }
+.insta-section .section-h2 { text-align: center; }
+.insta-section .section-sub { text-align: center; margin-left: auto; margin-right: auto; }
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.insta-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+  background: var(--brand-light);
+}
+.insta-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+.insta-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 600;
+}
+.insta-placeholder svg { opacity: 0.6; }
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(252,159,66,0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+.insta-item:hover img { transform: scale(1.05); }
+.insta-item:hover .insta-overlay { opacity: 1; }
+.insta-cta { text-align: center; }
+
+/* FINAL CTA */
+.final-cta {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 420px;
+  background: linear-gradient(135deg, #FFF4E6 0%, #FFECD2 30%, #FCE4B8 60%, #FFF9F0 100%);
+}
+.final-cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.final-cta-bg .cta-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+.final-cta-bg .cta-blob-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--brand);
+  top: -80px;
+  right: -60px;
+  animation: blobMove1 8s ease-in-out infinite;
+}
+.final-cta-bg .cta-blob-2 {
+  width: 250px;
+  height: 250px;
+  background: #FFD699;
+  bottom: -60px;
+  left: -40px;
+  animation: blobMove2 10s ease-in-out infinite;
+}
+.final-cta-bg .cta-blob-3 {
+  width: 200px;
+  height: 200px;
+  background: #FBBF24;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: blobMove3 7s ease-in-out infinite;
+}
+@keyframes blobMove1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(1.1); }
+  66% { transform: translate(20px, -20px) scale(0.95); }
+}
+@keyframes blobMove2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -25px) scale(1.08); }
+  66% { transform: translate(-20px, 15px) scale(0.92); }
+}
+@keyframes blobMove3 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+.final-cta-content {
+  position: relative;
+  z-index: 1;
+  padding: 60px 20px;
+}
+.final-cta h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 52px);
+  color: var(--dark);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  white-space: pre-line;
+  letter-spacing: -0.02em;
+}
+.final-cta h2 em {
+  color: var(--brand);
+  font-style: italic;
+}
+.final-cta .section-sub { color: var(--brown); margin-left: auto; margin-right: auto; text-align: center; }
+.final-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.final-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: var(--radius-xl);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-brand);
+}
+.final-btn-primary:hover { background: var(--brand-dark); transform: scale(1.04); }
+.final-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--dark);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--brown);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.final-btn-outline:hover { background: var(--dark); color: #fff; border-color: var(--dark); }
+
+/* FOOTER */
+.main-footer {
+  background: var(--dark);
+  padding: 60px 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 28px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.footer-tagline { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+.social-row { display: flex; gap: 12px; }
+.social-circle {
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: var(--transition);
+}
+.social-circle:hover { background: var(--brand); }
+.social-circle img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  /* Remove the filter to show original logo colors */
+}
+.social-circle:hover img { 
+  /* Keep original colors on hover */
+  filter: none;
+  opacity: 0.9;
+}
+.footer-col h5 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a { font-size: 14px; color: var(--muted); transition: var(--transition); }
+.footer-col ul a:hover { color: #fff; }
+.footer-address {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 20px;
+}
+.footer-address-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.footer-address-item i { color: var(--brand); width: 18px; height: 18px; flex-shrink: 0; }
+.footer-halal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.footer-halal-text p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+.footer-halal-text .halal-label { font-weight: 700; color: #fff; font-size: 18px; margin-top: 4px; display: block; }
+.halal-logo-img { width: 120px; height: auto; flex-shrink: 0; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  text-align: center;
+}
+.footer-bottom span { font-size: 13px; color: var(--muted); }
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE — TABLET */
+@media (min-width: 768px) {
+  .container { padding: 0 40px; }
+  section { padding: 100px 0; }
+  .hero-sub { font-size: 18px; }
+  .hero-ctas { flex-direction: row; justify-content: center; }
+  .hero-chips { display: flex; bottom: 120px; left: 60px; right: 60px; }
+  .partner-card { padding: 34px; }
+  .partner-grid { grid-template-columns: repeat(2, 1fr); }
+  .partner-ctas { flex-direction: row; align-items: center; }
+  .packaging-grid { grid-template-columns: repeat(2, 1fr); }
+  .packaging-showcase { gap: 16px; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .channels-grid { grid-template-columns: repeat(2, 1fr); }
+  .insta-grid { grid-template-columns: repeat(3, 1fr); }
+  .tips-layout { grid-template-columns: repeat(2, 1fr); }
+  .location-layout { grid-template-columns: 1fr 1fr; }
+  .location-right iframe { height: 100%; min-height: 400px; }
+  .location-left { padding: 60px 40px; }
+  .location-right { padding: 40px; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+  .footer-bottom { flex-direction: row; justify-content: space-between; }
+  .final-ctas { flex-direction: row; justify-content: center; }
+}
+
+/* RESPONSIVE — DESKTOP */
+@media (min-width: 1024px) {
+  .nav-links { display: flex; }
+  .nav-cta { display: block; }
+  .hamburger { display: none; }
+  .why-layout { grid-template-columns: 1fr 1fr; gap: 60px; }
+  .steps-grid { grid-template-columns: repeat(4, 1fr); }
+  .steps-connector {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    border-top: 2px dashed var(--border);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .step-card { position: relative; z-index: 1; }
+}
+
+@media (min-width: 1280px) {
+  .container { padding: 0 60px; }
+}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+</svg>
+
+<nav class="main-nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="logo-icon"></span>
+      Bonroll
+    </a>
+    <ul class="nav-links">
+      <li><a href="#produk">Produk</a></li>
+      <li><a href="#kenapa">Kenapa Bonroll</a></li>
+      <li><a href="#carapesan">Cara Pesan</a></li>
+      <li><a href="#lokasi">Lokasi</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://wa.me/6289675673488" class="btn-brand" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <div class="hamburger-lines">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay">
+  <div class="nav-overlay-bg" id="navOverlayBg"></div>
+  <div class="nav-overlay-panel">
+    <ul class="nav-overlay-links">
+      <li><a href="#produk" class="nav-overlay-link">Produk</a></li>
+      <li><a href="#kenapa" class="nav-overlay-link">Kenapa Bonroll</a></li>
+      <li><a href="#carapesan" class="nav-overlay-link">Cara Pesan</a></li>
+      <li><a href="#lokasi" class="nav-overlay-link">Lokasi</a></li>
+      <li><a href="#kontak" class="nav-overlay-link">Kontak</a></li>
+    </ul>
+    <div class="nav-overlay-cta">
+      <a href="https://wa.me/6289675673488" class="btn-brand" style="width:100%;justify-content:center;" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" fill="currentColor"><use href="#icon-wa"/></svg>
+        Pesan Sekarang
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-bg">
+    <img src="images/hero-bg.jpg" alt="Bonroll hero">
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i data-lucide="award" style="width:16px;height:16px;color:var(--brand);"></i>
+      Halal MUI Certified &middot; Tanpa Pengawet
+    </div>
+    <h1>Roti Abon Roll<br>yang Bikin <em>Nagih</em><br>di Setiap Gigitan.</h1>
+    <p class="hero-sub">Dibuat fresh oven setiap hari dari abon ayam pilihan dengan resep rahasia. Gurih, sedikit manis, empuk hadir dalam kemasan box dan sachet.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/6289675673488" class="btn-brand" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" fill="currentColor"><use href="#icon-wa"/></svg>
+        Pesan via WhatsApp
+      </a>
+      <a href="#produk" class="btn-ghost">Lihat Produk</a>
+    </div>
+  </div>
+  <div class="hero-chips">
+    <div class="hero-chip float-anim">
+      <i data-lucide="map-pin" style="width:16px;height:16px;color:#fff;"></i>
+      Karawaci &amp; Jakarta Timur
+    </div>
+    <div class="hero-chip float-anim-delay">
+      <i data-lucide="store" style="width:16px;height:16px;color:#fff;"></i>
+      Tersedia di Family Mart Jabodetabek
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <i data-lucide="chevron-down" style="width:28px;height:28px;color:#fff;"></i>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-bar-inner" id="trustBar"></div>
+</div>
+
+<section class="products" id="produk">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">PRODUK KAMI</span>
+      <h2 class="section-h2">Dua Rasa, Satu Cinta</h2>
+      <p class="section-sub">Bonroll hadir dalam dua varian rasa dan dua pilihan kemasan untuk semua kebutuhan kamu.</p>
+    </div>
+    <div id="variantMergedCard"></div>
+    <div class="packaging-grid" id="packagingGrid"></div>
+  </div>
+</section>
+
+<section class="why-section" id="kenapa">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">KENAPA BONROLL</span>
+      <h2 class="section-h2">Bukan Roti Abon Biasa</h2>
+      <p class="section-sub">Setiap detail dibuat dengan serius — dari bahan, resep, hingga cara panggang — supaya setiap gigitan selalu memukau.</p>
+    </div>
+    <div class="why-layout">
+      <div class="why-grid" id="whyGrid"></div>
+      <div class="why-image-wrap reveal">
+        <img src="images/fresh-bread.jpg" alt="Fresh baked bread" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tips-section">
+  <div class="tips-bg-img">
+    <img src="images/warm-kitchen.jpg" alt="Warm kitchen" loading="lazy">
+  </div>
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">TIPS BONROLL</span>
+      <h2 class="section-h2">Simpan dengan Benar,
+Nikmati di Kondisi Terbaik.</h2>
+    </div>
+    <div class="tips-layout">
+      <div class="tips-group reveal" id="storageGroup">
+        <h3>Cara Simpan</h3>
+      </div>
+      <div class="tips-group reveal" id="servingGroup">
+        <h3>Cara Menyantap</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="order-section" id="carapesan">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">CARA PESAN</span>
+      <h2 class="section-h2">Pesan Mudah,<br>Diterima Segar.</h2>
+      <p class="section-sub">Pemesanan minimal H-1 agar Bonroll kamu selalu fresh dan tidak kehabisan.</p>
+    </div>
+    <div class="steps-grid" id="stepsGrid">
+      <div class="steps-connector" style="display:none;"></div>
+    </div>
+    <div class="order-cta reveal">
+      <a href="https://wa.me/6289675673488" class="btn-brand" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" fill="currentColor"><use href="#icon-wa"/></svg>
+        Pesan via WhatsApp Sekarang
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="location-section" id="lokasi">
+  <div class="location-layout">
+    <div class="location-left">
+      <span class="eyebrow" style="color:#fff;">LOKASI</span>
+      <h2 class="section-h2" style="color:#fff;">Temukan Bonroll
+di Dekat Kamu.</h2>
+      <div id="locationCards"></div>
+    </div>
+    <div class="location-right">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2!2d106.63!3d-6.17!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ff2654a6b12d%3A0x4b0c3c8ecf927a0!2sJl.+Beringin+Raya%2C+Karawaci+Baru%2C+Kec.+Karawaci%2C+Kota+Tangerang!5e0!3m2!1sid!2sid!4v1700000000000"
+        width="100%" height="400" style="border:0; border-radius: var(--radius-lg);" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section class="channels-section" id="kontak">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">CHANNEL PEMBELIAN</span>
+      <h2 class="section-h2">Beli Bonroll di Mana Kamu Nyaman</h2>
+    </div>
+    <div class="channels-grid" id="channelsGrid"></div>
+  </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">KATA MEREKA</span>
+      <h2 class="section-h2">Sudah Ribuan yang Ketagihan</h2>
+      <p class="section-sub">Jangan percaya kami begitu saja — baca pengalaman nyata pelanggan Bonroll.</p>
+    </div>
+    <div class="testimonials-grid" id="testimonialsGrid"></div>
+  </div>
+</section>
+
+<section class="partner-section" id="kemitraan">
+  <div class="container">
+    <div class="partner-card reveal">
+      <div class="partner-content">
+        <span class="eyebrow">JOIN KEMITRAAN BONROLL</span>
+        <h2 class="section-h2">Buka Peluang Cuan<br>Bareng Bonroll</h2>
+        <p class="section-sub">Kami membuka kemitraan untuk reseller, titip jual, dan distributor area baru. Skema simpel, dukungan jelas, dan produk sudah terbukti disukai pelanggan.</p>
+
+        <div class="partner-grid">
+          <div class="partner-item">
+            <i data-lucide="badge-check"></i>
+            <div><strong>Produk Sudah Teruji</strong><span>Rasa konsisten, repeat order tinggi, dan cocok untuk berbagai segmen.</span></div>
+          </div>
+          <div class="partner-item">
+            <i data-lucide="package"></i>
+            <div><strong>Modal Awal Fleksibel</strong><span>Pilih skema stok sesuai kapasitas, dari skala kecil sampai besar.</span></div>
+          </div>
+          <div class="partner-item">
+            <i data-lucide="megaphone"></i>
+            <div><strong>Support Promosi</strong><span>Dapat materi konten dan arahan jualan untuk percepat penjualan.</span></div>
+          </div>
+          <div class="partner-item">
+            <i data-lucide="map"></i>
+            <div><strong>Prioritas Area Baru</strong><span>Kembangkan pasar Bonroll di kota kamu bersama tim kami.</span></div>
+          </div>
+        </div>
+
+        <div class="partner-ctas">
+          <a href="https://wa.me/6289675673488?text=Hai%20Bonroll%2C%20saya%20tertarik%20join%20kemitraan.%20Boleh%20minta%20detailnya%3F" class="btn-brand" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" fill="currentColor"><use href="#icon-wa"/></svg>
+            Ajukan Kemitraan
+          </a>
+          <a href="#kontak" class="partner-link">
+            <i data-lucide="arrow-right"></i>
+            Lihat channel penjualan aktif
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="insta-section">
+  <div class="container">
+    <h2 class="section-h2 reveal">Follow @bonroll_</h2>
+    <p class="section-sub reveal">Lihat konten terbaru, promo, dan behind-the-scenes di Instagram kami.</p>
+    <div class="insta-grid" id="instaGrid"></div>
+    <div class="insta-cta reveal">
+      <a href="https://instagram.com/bonroll_" class="btn-brand" target="_blank" rel="noopener noreferrer">
+        <i data-lucide="instagram" style="width:18px;height:18px;"></i>
+        Follow di Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta-bg">
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+    <div class="cta-blob cta-blob-3"></div>
+  </div>
+  <div class="final-cta-content">
+    <h2 class="reveal">Siap Merasakan
+Bedanya <em>Bonroll</em>?</h2>
+    <p class="section-sub reveal">Pesan sekarang sebelum kehabisan. Tersedia fresh oven setiap hari.</p>
+    <div class="final-ctas reveal">
+      <a href="https://wa.me/6289675673488" class="final-btn-primary" target="_blank" rel="noopener noreferrer" >
+        <svg width="18" height="18" fill="currentColor"><use href="#icon-wa"/></svg>
+        Pesan via WhatsApp
+      </a>
+      <a href="https://shopee.co.id/bonroll" class="final-btn-outline" target="_blank" rel="noopener noreferrer">Lihat di Shopee</a>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid" id="footerGrid">
+      <div class="footer-brand-col">
+        <div class="footer-brand-logo">
+          <span class="logo-icon"></span>
+          Bonroll
+        </div>
+        <p class="footer-tagline">Satu gigitan, seribu alasan untuk ketagihan.</p>
+        <div class="social-row">
+          <a href="https://instagram.com/bonroll_" class="social-circle" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
+          <a href="https://wa.me/6289675673488" class="social-circle" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="18" height="18" fill="currentColor"><use href="#icon-wa"/></svg></a>
+          <a href="https://shopee.co.id/bonroll" class="social-circle" target="_blank" rel="noopener noreferrer" aria-label="Shopee"><img src="images/logo-shopee2.png" alt="Shopee"></a>
+        </div>
+      </div>
+      <div class="footer-col" id="footerProduk"></div>
+      <div class="footer-col" id="footerPembelian"></div>
+      <div class="footer-col" id="footerInfo"></div>
+    </div>
+    <div class="footer-address">
+      <div class="footer-address-item">
+        <i data-lucide="map-pin"></i>
+        Jl. Beringin Raya 130 C, Perumnas 1, Karawaci Baru, Kota Tangerang
+      </div>
+      <div class="footer-address-item">
+        <i data-lucide="phone"></i>
+        089675673488
+      </div>
+    </div>
+    <div class="footer-halal">
+      <div class="footer-halal-text">
+        <p>Produk ini telah terdaftar dan tersertifikasi</p>
+        <span class="halal-label">Halal oleh Majelis Ulama Indonesia (MUI)</span>
+      </div>
+      <img src="images/halal-mui.png" alt="Logo Halal MUI" class="halal-logo-img">
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Bonroll. All rights reserved.</span>
+      <span>Made with love in Tangerang</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+(function() {
+
+var waSvg = '<svg width="22" height="22" fill="#fff"><use href="#icon-wa"/></svg>';
+
+var stats = [
+  { icon: "shield-check", value: "Halal MUI", label: "Bersertifikat resmi" },
+  { icon: "clock", value: "Fresh Oven", label: "Dipanggang setiap hari" },
+  { icon: "package", value: "2 Kemasan", label: "Box & Sachet tersedia" },
+  { icon: "store", value: "Family Mart", label: "Tersedia Jabodetabek" }
+];
+document.getElementById('trustBar').innerHTML = stats.map(function(s) {
+  return '<div class="trust-item"><i data-lucide="'+s.icon+'" style="width:28px;height:28px;color:#fff;"></i><div class="trust-text-group"><div class="trust-value">'+s.value+'</div><div class="trust-label">'+s.label+'</div></div></div>';
+}).join('');
+
+var variants = [
+  {
+    id: "original",
+    name: "Original",
+    desc: "Gurih sempurna dengan abon ayam premium yang lembut dan kaya rasa. Cocok untuk semua usia, pas dinikmati kapan saja.",
+    tag: "Best Seller",
+    tagColor: "var(--brand)",
+    image: "images/bonroll-original.jpg",
+    badge: "Gurih \u00b7 Manis \u00b7 Nagih"
+  },
+  {
+    id: "spicy",
+    name: "Spicy",
+    desc: "Sensasi pedas menggugah selera yang menyatu sempurna dengan gurihnya abon ayam. Buat kamu yang suka tantangan rasa.",
+    tag: "New Fav",
+    tagColor: "#E53E3E",
+    image: "images/bonroll-spicy.jpg",
+    badge: "Gurih \u00b7 Pedas \u00b7 Adiktif"
+  }
+];
+
+// Build merged card with tabs
+var mergedHtml = '<div class="variant-card-merged reveal">';
+mergedHtml += '<div class="variant-tabs">';
+variants.forEach(function(v, i) {
+  mergedHtml += '<button class="variant-tab'+(i===0?' active':'')+'" data-tab="'+v.id+'">';
+  mergedHtml += '<span class="tab-badge" style="background:'+v.tagColor+'">'+v.tag+'</span> '+v.name;
+  mergedHtml += '</button>';
+});
+mergedHtml += '</div>';
+variants.forEach(function(v, i) {
+  mergedHtml += '<div class="variant-panel'+(i===0?' active':'')+'" data-panel="'+v.id+'">';
+  mergedHtml += '<div class="variant-img-wrap"><span class="variant-tag" style="background:'+v.tagColor+'">'+v.tag+'</span><img src="'+v.image+'" alt="Bonroll '+v.name+'" loading="lazy"></div>';
+  mergedHtml += '<div class="variant-body"><h3>Bonroll '+v.name+'</h3><p>'+v.desc+'</p>';
+  mergedHtml += '<div class="flavor-badges">'+v.badge.split(' \u00b7 ').map(function(b){return '<span class="flavor-badge">'+b+'</span>';}).join('')+'</div>';
+  mergedHtml += '<a href="https://wa.me/6289675673488?text=Hai%20Bonroll%2C%20saya%20mau%20pesan%20varian%20'+v.name+'" class="btn-brand" target="_blank" rel="noopener noreferrer">Pesan '+v.name+'</a>';
+  mergedHtml += '</div></div>';
+});
+mergedHtml += '<div style="padding:0 24px 24px;"><p style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:12px;">Pilihan Kemasan</p>';
+mergedHtml += '<div class="packaging-showcase">';
+mergedHtml += '<div class="pkg-img-card"><img src="images/bonroll-sachet.jpg" alt="Kemasan Sachet" loading="lazy"><div class="pkg-img-label">Sachet — Rp 12.000</div></div>';
+mergedHtml += '<div class="pkg-img-card"><img src="images/bonroll-box.jpg" alt="Kemasan Box" loading="lazy"><div class="pkg-img-label">Box — Rp 75.000</div></div>';
+mergedHtml += '</div></div>';
+mergedHtml += '</div>';
+document.getElementById('variantMergedCard').innerHTML = mergedHtml;
+
+// Tab switching
+document.querySelectorAll('.variant-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    var target = this.getAttribute('data-tab');
+    document.querySelectorAll('.variant-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.variant-panel').forEach(function(p) { p.classList.remove('active'); });
+    this.classList.add('active');
+    document.querySelector('.variant-panel[data-panel="'+target+'"]').classList.add('active');
+  });
+});
+
+var packagings = [
+  {
+    icon: "package",
+    name: "Kemasan Box",
+    price: "Rp 75.000",
+    desc: "Kemasan premium untuk hadiah atau oleh-oleh. Isi lebih banyak, tampilan elegan.",
+    perks: ["Cocok untuk oleh-oleh", "Tampilan premium", "Tersedia Original & Spicy"]
+  },
+  {
+    icon: "shopping-bag",
+    name: "Kemasan Sachet",
+    price: "Rp 12.000",
+    desc: "Harga bersahabat untuk dinikmati sendiri atau dicoba dulu sebelum beli box.",
+    perks: ["Harga terjangkau", "Mudah dibawa", "Tersedia Original & Spicy"]
+  }
+];
+document.getElementById('packagingGrid').innerHTML = packagings.map(function(p) {
+  return '<div class="packaging-card reveal"><div class="pkg-icon-wrap"><i data-lucide="'+p.icon+'" style="width:24px;height:24px;"></i></div><div class="pkg-content"><h4>'+p.name+'</h4><div class="pkg-price">'+p.price+'</div><p>'+p.desc+'</p><ul class="pkg-perks">'+p.perks.map(function(pk){return '<li><i data-lucide="check" style="width:16px;height:16px;"></i>'+pk+'</li>';}).join('')+'</ul></div></div>';
+}).join('');
+
+var reasons = [
+  { icon: "feather", title: "Tekstur Super Empuk", body: "Adonan diproses dengan teknik khusus yang menghasilkan tekstur roti lembut dan ringan di setiap gigitan." },
+  { icon: "flame", title: "Abon Ayam Premium", body: "Menggunakan abon ayam pilihan yang diolah dengan resep rahasia \u2014 gurih, sedikit manis, dan kaya rasa." },
+  { icon: "leaf", title: "Tanpa Bahan Pengawet", body: "Dibuat fresh setiap hari tanpa pengawet. Kemurnian rasa terjaga, keamanan konsumen diutamakan." },
+  { icon: "award", title: "Halal MUI Certified", body: "Sudah terdaftar resmi Halal MUI. Aman dan terpercaya untuk seluruh keluarga Indonesia." },
+  { icon: "tag", title: "Harga Lebih Bersahabat", body: "Kualitas premium tidak harus mahal. Bonroll hadir dengan harga yang ramah di kantong semua kalangan." },
+  { icon: "gift", title: "Cocok Jadi Oleh-Oleh", body: "Kemasan box yang cantik dan tersedia frozen \u2014 sempurna untuk dibawa keluar kota atau luar negeri." }
+];
+document.getElementById('whyGrid').innerHTML = reasons.map(function(r) {
+  return '<div class="why-card reveal"><div class="why-card-icon"><i data-lucide="'+r.icon+'" style="width:40px;height:40px;"></i></div><h4>'+r.title+'</h4><p>'+r.body+'</p></div>';
+}).join('');
+
+var storageInfo = [
+  { icon: "sun", label: "Suhu Ruang", value: "Maks. 3 Hari", note: "Setelah kemasan dibuka, segera habiskan." },
+  { icon: "snowflake", label: "Freezer", value: "Maks. 3 Bulan", note: "Kemasan frozen tersedia untuk jarak jauh." },
+  { icon: "package", label: "Setelah Buka", value: "Segera Habiskan", note: "Tanpa pengawet \u2014 freshness is everything." }
+];
+document.getElementById('storageGroup').innerHTML += storageInfo.map(function(s) {
+  return '<div class="storage-card"><div class="tip-icon"><i data-lucide="'+s.icon+'" style="width:24px;height:24px;"></i></div><div><div class="tip-label">'+s.label+'</div><div class="tip-value">'+s.value+'</div><div class="tip-note">'+s.note+'</div></div></div>';
+}).join('');
+
+var servingTips = [
+  { icon: "zap", method: "Microwave / Air Fryer", duration: "30\u201360 Detik", desc: "Cara tercepat untuk hasil hangat dan crispy." },
+  { icon: "wind", method: "Dikukus", duration: "3\u20135 Menit", desc: "Tekstur lebih lembap dan lembut." }
+];
+document.getElementById('servingGroup').innerHTML += servingTips.map(function(t) {
+  return '<div class="serving-card"><div class="tip-icon"><i data-lucide="'+t.icon+'" style="width:24px;height:24px;"></i></div><div><div class="serving-method">'+t.method+'</div><div class="serving-duration">'+t.duration+'</div><div class="serving-desc">'+t.desc+'</div></div></div>';
+}).join('');
+
+var orderSteps = [
+  { step: "01", icon: "message-circle", title: "Hubungi Kami", body: "Chat WhatsApp di 089675673488 atau pesan lewat Shopee & GrabFood/GoFood." },
+  { step: "02", icon: "map-pin", title: "Pilih Lokasi", body: "Tentukan lokasi pickup terdekat \u2014 Karawaci (setiap hari) atau Jakarta Timur (setiap Senin)." },
+  { step: "03", icon: "calendar", title: "Pesan H-1", body: "Lakukan pemesanan minimal satu hari sebelumnya agar stok terjamin untuk kamu." },
+  { step: "04", icon: "shopping-bag", title: "Ambil & Nikmati", body: "Ambil Bonroll kamu dalam kondisi fresh oven. Siap dimakan atau dijadikan oleh-oleh." }
+];
+var stepsHtml = '<div class="steps-connector"></div>';
+stepsHtml += orderSteps.map(function(s) {
+  return '<div class="step-card reveal"><span class="step-num">'+s.step+'</span><div class="step-icon-wrap"><i data-lucide="'+s.icon+'" style="width:24px;height:24px;"></i></div><h4>'+s.title+'</h4><p>'+s.body+'</p></div>';
+}).join('');
+document.getElementById('stepsGrid').innerHTML = stepsHtml;
+
+var locations = [
+  { icon: "map-pin", name: "Outlet Utama \u2014 Karawaci", address: "Jl. Beringin Raya 130 C, Perumnas 1, Karawaci Baru, Kota Tangerang.", schedule: "Tersedia setiap hari" },
+  { icon: "map-pin", name: "Jakarta Timur", address: "Titik pickup Jakarta Timur", schedule: "Tersedia setiap hari Senin" },
+  { icon: "store", name: "Family Mart \u2014 Jabodetabek", address: "Seluruh gerai Family Mart area Jabodetabek", schedule: "Setiap hari jam operasional toko" }
+];
+document.getElementById('locationCards').innerHTML = locations.map(function(l) {
+  return '<div class="location-card"><i data-lucide="'+l.icon+'" style="width:24px;height:24px;color:#fff;"></i><div><div class="loc-name">'+l.name+'</div><div class="loc-address">'+l.address+'</div><div class="loc-schedule"><i data-lucide="clock" style="color:rgba(255,255,255,0.6);"></i>'+l.schedule+'</div></div></div>';
+}).join('');
+
+var channels = [
+  {
+    logoHtml: '<img src="images/logo-wa.png" alt="WhatsApp">',
+    name: "WhatsApp",
+    handle: "089675673488",
+    desc: "Chat langsung untuk pemesanan personal dan kustom.",
+    link: "https://wa.me/6289675673488",
+    cta: "Chat Sekarang",
+    color: "#25D366"
+  },
+  {
+    logoHtml: '<img src="images/logo-shopee.png" alt="Shopee">',
+    name: "Shopee",
+    handle: "@bonroll",
+    desc: "Beli online dengan aman, bayar mudah, gratis ongkir promo.",
+    link: "https://shopee.co.id/bonroll",
+    cta: "Buka Toko",
+    color: "#EE4D2D"
+  },
+  {
+    logoHtml: '<img src="images/logo-grabfood.png" alt="GrabFood" style="margin-right:4px;"><img src="images/logo-gofood.png" alt="GoFood">',
+    name: "GrabFood & GoFood",
+    handle: "Bonroll Maia Bakery",
+    desc: "Pesan antar langsung ke depan pintu kamu.",
+    link: "#",
+    cta: "Cari di Aplikasi",
+    color: "#00B14F"
+  },
+  {
+    logoHtml: '<img src="images/logo-familymart.png" alt="Family Mart">',
+    name: "Family Mart",
+    handle: "Seluruh Gerai Jabodetabek",
+    desc: "Temukan Bonroll di rak snack Family Mart terdekat.",
+    link: "#",
+    cta: "Cari Gerai",
+    color: "#006837"
+  }
+];
+document.getElementById('channelsGrid').innerHTML = channels.map(function(c) {
+  return '<div class="channel-card reveal"><div class="channel-bar" style="background:'+c.color+';"></div><div class="channel-body"><div class="channel-logo-wrap">'+c.logoHtml+'</div><h4>'+c.name+'</h4><div class="channel-handle">'+c.handle+'</div><p>'+c.desc+'</p><a href="'+c.link+'" class="channel-cta" style="background:'+c.color+';"'+(c.link.startsWith('http')?' target="_blank" rel="noopener noreferrer"':'')+'>'+c.cta+'</a></div></div>';
+}).join('');
+
+var testimonials = [
+  { text: "Sumpah enak banget! Abonnya beda dari roti abon lain \u2014 lebih gurih dan nggak bikin enek. Udah repeat order berkali-kali.", name: "Resti Amalia", role: "Pelanggan setia sejak 2023", rating: 5 },
+  { text: "Beli buat oleh-oleh ke Bandung, semua pada suka. Yang tadinya nggak doyan roti abon jadi minta lagi. Packaging-nya juga cantik!", name: "Dimas Pratama", role: "Pembeli via Shopee", rating: 5 },
+  { text: "Yang spicy itu level beda, pedasnya pas nggak lebay. Enak banget sambil ngeteh sore. Wajib coba yang belum!", name: "Nadia Kurniasih", role: "Pembeli via GrabFood", rating: 5 },
+  { text: "Bonroll jadi andalan hampers lebaran keluarga. Tahan di freezer juga jadi bisa kirim ke luar kota. Harganya juga worth banget!", name: "Fitri Handayani", role: "Pembeli reguler", rating: 5 }
+];
+document.getElementById('testimonialsGrid').innerHTML = testimonials.map(function(t) {
+  var stars = '';
+  for(var i=0;i<t.rating;i++) stars += '<i data-lucide="star" style="width:18px;height:18px;fill:#F59E0B;stroke:#F59E0B;"></i>';
+  return '<div class="testimonial-card reveal"><div class="testi-stars">'+stars+'</div><p class="testi-text">\u201C'+t.text+'\u201D</p><div class="testi-author"><div class="testi-avatar" aria-hidden="true"><i data-lucide="user"></i></div><div><div class="testi-name">'+t.name+'</div><div class="testi-role">'+t.role+'</div></div></div></div>';
+}).join('');
+
+var instaPosts = [
+  { shortcode: "DAA3McAvAlz", url: "https://www.instagram.com/p/DAA3McAvAlz/" },
+  { shortcode: "DLeEb90RUWw", url: "https://www.instagram.com/reel/DLeEb90RUWw/" },
+  { shortcode: "DVrtuABkr-U", url: "https://www.instagram.com/reel/DVrtuABkr-U/" },
+  { shortcode: "DVgabV8ESrp", url: "https://www.instagram.com/p/DVgabV8ESrp/" },
+  { shortcode: "DQ-ywoDkXxm", url: "https://www.instagram.com/p/DQ-ywoDkXxm/" },
+  { shortcode: "DNMh8sFTAv6", url: "https://www.instagram.com/p/DNMh8sFTAv6/" }
+];
+document.getElementById('instaGrid').innerHTML = instaPosts.map(function(p) {
+  var thumbUrl = "https://www.instagram.com/p/" + p.shortcode + "/media/?size=l";
+  return '<a href="'+p.url+'" class="insta-item reveal" target="_blank" rel="noopener noreferrer">' +
+    '<img src="'+thumbUrl+'" alt="Bonroll Instagram Post" loading="lazy" referrerpolicy="no-referrer" crossorigin="anonymous" onerror="this.style.display=\'none\'">' +
+    '<div class="insta-placeholder"><i data-lucide="instagram" style="width:40px;height:40px;"></i><span>Lihat Post</span></div>' +
+    '<div class="insta-overlay"><i data-lucide="instagram" style="width:28px;height:28px;"></i>Lihat di Instagram</div>' +
+    '</a>';
+}).join('');
+
+var footerProduk = ["Roti Abon Original", "Roti Abon Spicy", "Kemasan Box", "Kemasan Sachet", "Kemasan Frozen"];
+document.getElementById('footerProduk').innerHTML = '<h5>Produk</h5><ul>'+footerProduk.map(function(f){return '<li><a href="#produk">'+f+'</a></li>';}).join('')+'</ul>';
+
+var footerPembelian = ["Pesan via WhatsApp", "Beli di Shopee", "GrabFood \u2014 Bonroll Maia Bakery", "GoFood \u2014 Bonroll Maia Bakery", "Family Mart Jabodetabek"];
+document.getElementById('footerPembelian').innerHTML = '<h5>Pembelian</h5><ul>'+footerPembelian.map(function(f){return '<li><a href="#kontak">'+f+'</a></li>';}).join('')+'</ul>';
+
+var footerInfo = ["Cara Pesan", "Lokasi & Pickup", "Tips Menyimpan", "Tentang Kami", "Kontak"];
+document.getElementById('footerInfo').innerHTML = '<h5>Info</h5><ul>'+footerInfo.map(function(f){return '<li><a href="#">'+f+'</a></li>';}).join('')+'</ul>';
+
+lucide.createIcons();
+
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+var hamburger = document.getElementById('hamburgerBtn');
+var overlay = document.getElementById('navOverlay');
+var overlayBg = document.getElementById('navOverlayBg');
+
+function closeMenu() {
+  hamburger.classList.remove('active');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', function() {
+  var isOpen = overlay.classList.contains('open');
+  if (isOpen) {
+    closeMenu();
+  } else {
+    this.classList.add('active');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+});
+overlayBg.addEventListener('click', closeMenu);
+document.querySelectorAll('.nav-overlay-link').forEach(function(link) {
+  link.addEventListener('click', closeMenu);
+});
+
+var reveals = document.querySelectorAll('.reveal');
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      var siblings = entry.target.parentElement.querySelectorAll('.reveal');
+      var idx = Array.prototype.indexOf.call(siblings, entry.target);
+      setTimeout(function() {
+        entry.target.classList.add('visible');
+      }, idx * 100);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+reveals.forEach(function(el) { observer.observe(el); });
+
+})();
+</script>
+</body>
+</html>
