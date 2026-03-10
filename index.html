@@ -5,8 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bonroll — Roti Abon Roll Premium</title>
 <meta name="description" content="Bonroll - Roti abon roll premium dengan abon ayam olahan resep rahasia. Gurih, sedikit manis, empuk, tanpa pengawet.">
+<meta name="theme-color" content="#FC9F42">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://unpkg.com">
+<link rel="preload" as="image" href="images/hero-bg.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -35,6 +38,7 @@
 html { scroll-behavior: smooth; }
 body { background: var(--cream); color: var(--brown); font-family: var(--font-body); overflow-x: hidden; }
 img { width: 100%; display: block; object-fit: cover; }
+.cv-auto { content-visibility: auto; contain-intrinsic-size: auto 600px; }
 a { text-decoration: none; color: inherit; }
 
 .eyebrow {
@@ -1462,7 +1466,7 @@ section { padding: 80px 0; }
 
 <section class="hero">
   <div class="hero-bg">
-    <img src="images/hero-bg.jpg" alt="Bonroll hero">
+    <img src="images/hero-bg.jpg" alt="Bonroll hero" fetchpriority="high" decoding="async" width="1920" height="1080">
   </div>
   <div class="hero-content">
     <div class="hero-badge">
@@ -1498,7 +1502,7 @@ section { padding: 80px 0; }
   <div class="trust-bar-inner" id="trustBar"></div>
 </div>
 
-<section class="products" id="produk">
+<section class="products cv-auto" id="produk">
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">PRODUK KAMI</span>
@@ -1510,7 +1514,7 @@ section { padding: 80px 0; }
   </div>
 </section>
 
-<section class="why-section" id="kenapa">
+<section class="why-section cv-auto" id="kenapa">
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">KENAPA BONROLL</span>
@@ -1520,15 +1524,15 @@ section { padding: 80px 0; }
     <div class="why-layout">
       <div class="why-grid" id="whyGrid"></div>
       <div class="why-image-wrap reveal">
-        <img src="images/fresh-bread.jpg" alt="Fresh baked bread" loading="lazy">
+        <img src="images/fresh-bread.jpg" alt="Fresh baked bread" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
 </section>
 
-<section class="tips-section">
+<section class="tips-section cv-auto">
   <div class="tips-bg-img">
-    <img src="images/warm-kitchen.jpg" alt="Warm kitchen" loading="lazy">
+    <img src="images/warm-kitchen.jpg" alt="Warm kitchen" loading="lazy" decoding="async">
   </div>
   <div class="container">
     <div class="reveal">
@@ -1547,7 +1551,7 @@ Nikmati di Kondisi Terbaik.</h2>
   </div>
 </section>
 
-<section class="order-section" id="carapesan">
+<section class="order-section cv-auto" id="carapesan">
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">CARA PESAN</span>
@@ -1583,7 +1587,7 @@ di Dekat Kamu.</h2>
   </div>
 </section>
 
-<section class="channels-section" id="kontak">
+<section class="channels-section cv-auto" id="kontak">
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">CHANNEL PEMBELIAN</span>
@@ -1593,7 +1597,7 @@ di Dekat Kamu.</h2>
   </div>
 </section>
 
-<section class="testimonials-section">
+<section class="testimonials-section cv-auto">
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">KATA MEREKA</span>
@@ -1604,7 +1608,7 @@ di Dekat Kamu.</h2>
   </div>
 </section>
 
-<section class="partner-section" id="kemitraan">
+<section class="partner-section cv-auto" id="kemitraan">
   <div class="container">
     <div class="partner-card reveal">
       <div class="partner-content">
@@ -1646,7 +1650,7 @@ di Dekat Kamu.</h2>
   </div>
 </section>
 
-<section class="insta-section">
+<section class="insta-section cv-auto">
   <div class="container">
     <h2 class="section-h2 reveal">Follow @bonroll_</h2>
     <p class="section-sub reveal">Lihat konten terbaru, promo, dan behind-the-scenes di Instagram kami.</p>
@@ -1660,7 +1664,7 @@ di Dekat Kamu.</h2>
   </div>
 </section>
 
-<section class="final-cta">
+<section class="final-cta cv-auto">
   <div class="final-cta-bg">
     <div class="cta-blob cta-blob-1"></div>
     <div class="cta-blob cta-blob-2"></div>
@@ -1714,7 +1718,7 @@ Bedanya <em>Bonroll</em>?</h2>
         <p>Produk ini telah terdaftar dan tersertifikasi</p>
         <span class="halal-label">Halal oleh Majelis Ulama Indonesia (MUI)</span>
       </div>
-      <img src="images/halal-mui.png" alt="Logo Halal MUI" class="halal-logo-img">
+      <img src="images/halal-mui.png" alt="Logo Halal MUI" class="halal-logo-img" loading="lazy" decoding="async">
     </div>
     <div class="footer-bottom">
       <span>&copy; 2025 Bonroll. All rights reserved.</span>
@@ -1723,9 +1727,9 @@ Bedanya <em>Bonroll</em>?</h2>
   </div>
 </footer>
 
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <script>
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
 
 var waSvg = '<svg width="22" height="22" fill="#fff"><use href="#icon-wa"/></svg>';
 
@@ -1994,7 +1998,7 @@ var observer = new IntersectionObserver(function(entries) {
 }, { threshold: 0.15 });
 reveals.forEach(function(el) { observer.observe(el); });
 
-})();
+});
 </script>
 </body>
 </html>
