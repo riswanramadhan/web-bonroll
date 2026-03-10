@@ -478,14 +478,11 @@ section { padding: 80px 0; }
 .trust-bar {
   background: var(--brand);
   padding: 24px 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
-.trust-bar::-webkit-scrollbar { display: none; }
 .trust-bar-inner {
   display: flex;
-  gap: 0;
-  min-width: max-content;
+  justify-content: space-evenly;
   padding: 0 20px;
 }
 .trust-item {
@@ -502,6 +499,21 @@ section { padding: 80px 0; }
 .trust-text-group { text-align: left; }
 .trust-value { font-weight: 700; font-size: 16px; color: #fff; }
 .trust-label { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (max-width: 768px) {
+  .trust-bar-inner {
+    justify-content: flex-start;
+    padding: 0;
+    gap: 0;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+  }
+  .trust-item:last-child { border-right: 1px solid rgba(255,255,255,0.2); }
+}
 
 /* PRODUCTS */
 .products { background: var(--cream); }
@@ -1721,7 +1733,7 @@ Bedanya <em>Bonroll</em>?</h2>
       <img src="images/halal-mui.png" alt="Logo Halal MUI" class="halal-logo-img" loading="lazy" decoding="async">
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2025 Bonroll. All rights reserved.</span>
+      <span>&copy; 2026 Bonroll. All rights reserved.</span>
       <span>Made with love in Tangerang</span>
     </div>
   </div>
@@ -1742,6 +1754,12 @@ var stats = [
 document.getElementById('trustBar').innerHTML = stats.map(function(s) {
   return '<div class="trust-item"><i data-lucide="'+s.icon+'" style="width:28px;height:28px;color:#fff;"></i><div class="trust-text-group"><div class="trust-value">'+s.value+'</div><div class="trust-label">'+s.label+'</div></div></div>';
 }).join('');
+
+// Duplicate trust items for seamless mobile marquee
+if (window.innerWidth <= 768) {
+  var trustBar = document.getElementById('trustBar');
+  trustBar.innerHTML = trustBar.innerHTML + trustBar.innerHTML;
+}
 
 var variants = [
   {
